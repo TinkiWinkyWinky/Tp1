@@ -1,0 +1,47 @@
+﻿@model Tp1.Models.FilmModel
+
+<div class="col-5">
+    <form asp-controller="Films" asp-action="Details" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        @if (Model.DateSortie.Year <= 2005)
+        {
+            <button type="submit">
+                <div class="card mb-3 bg-danger" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-5 d-flex align-items-center">
+                            <img src=@Model.CheminImage class="card-img" alt="Card image cap">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <p class="card-text"><b>Titre :</b> @Model.Titre</p>
+                                <p class="card-text"><b>Date de sortie :</b> @Model.DateSortie.Year</p>
+                                <p class="card-text"><b>Catégorie :</b> @Model.Categorie</p>
+                                <p class="card-text"><b>Budget :</b> @Model.BudgetRealisation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        }
+        else
+        {
+            <button type="submit">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-5 d-flex align-items-center">
+                            <img src=@Model.CheminImage class="card-img" alt="Card image cap">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <p class="card-text"><b>Titre :</b> @Model.Titre</p>
+                                <p class="card-text"><b>Date de sortie :</b> @Model.DateSortie.Year</p>
+                                <p class="card-text"><b>Catégorie :</b> @Model.Categorie</p>
+                                <p class="card-text"><b>Budget :</b> @Model.BudgetRealisation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        }
+    </form>
+</div>

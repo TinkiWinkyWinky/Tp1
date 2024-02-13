@@ -1,0 +1,17 @@
+﻿@model Tp1.ViewModels.FilmIndexVM
+
+@if (Model.Films.Any())
+{
+    <div class="container">
+        <div class="row g-3">
+            @foreach (var film in Model.Films)
+            {
+                @await Html.PartialAsync("_FilmInfoPartial", film)
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="text-center alert alert-warning alert-dismissible fade show" role="alert"><strong>Il n'y a pas de film</strong></div>
+}
