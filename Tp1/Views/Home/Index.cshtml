@@ -1,8 +1,29 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model Tp1.ViewModels.FilmIndexVM
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row justify-content-md-center">
+    <div class="col-md-4">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="@Model.Films[0].CheminImage" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>@Model.Films[0].DateSortie</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="@Model.Films[1].CheminImage" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>@Model.Films[1].DateSortie</h3>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="@Model.Films[2].CheminImage" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>@Model.Films[2].DateSortie</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
